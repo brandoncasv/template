@@ -2,6 +2,7 @@
 use Sdkconsultoria\Base\Widgets\Information\BreadCrumb;
 use Sdkconsultoria\Base\Widgets\Form\ActiveField;
 use Sdkconsultoria\Base\Widgets\Messages\Error;
+ActiveField::$rules = 'rulesUpdate';
 @endphp
 
 @extends('base::layouts.main')

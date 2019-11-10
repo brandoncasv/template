@@ -25,11 +25,9 @@ use Sdkconsultoria\Base\Widgets\Messages\Alert;
         'route' => 'user',
         'key' => 'name',
         'attributes' => [
-            'id',
             'name',
             'email',
             'created_at',
-            'updated_at',
             'status',
         ]
     ])?>
