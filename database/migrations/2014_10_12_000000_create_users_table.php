@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->smallInteger('status')->default('10');
+            $table->smallInteger('status')->default('15');
             $table->unsignedBigInteger('created_by')->unsigned()->index()->nullable();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('updated_by')->unsigned()->index()->nullable();
