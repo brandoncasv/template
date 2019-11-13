@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('phone_code')->nullable();
             $table->string('phone')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
             $table->timestamp('email_verified_at')->nullable();
@@ -32,9 +33,6 @@ class CreateUsersTable extends Migration
             $table->foreign('created_by')->references('id')->on('users')->onDelete('restrict');
             $table->unsignedBigInteger('updated_by')->unsigned()->index()->nullable();
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('restrict');
-            $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('linkedin')->nullable();
             $table->text('description')->nullable();
             $table->string('time_zone')->nullable();
             $table->string('language')->nullable();
