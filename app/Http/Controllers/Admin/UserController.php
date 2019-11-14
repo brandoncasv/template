@@ -44,4 +44,9 @@ class UserController extends ResourceController
         $model->save();
         return redirect()->route($this->resource . '.index')->with('success', __('base::messages.saved'));
     }
+
+    public function myProfile()
+    {
+        return view('user.my-profile');
+    }
 }

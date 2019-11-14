@@ -11,5 +11,6 @@
             'email'    => 'Correo',
             'password' => 'Contraseña',
             'password_confirmation' => 'Confirmar Contraseña',
+            'my-profile' => 'Mi Perfil',
         ]
     ];
