@@ -47,6 +47,7 @@ class UserController extends ResourceController
 
     public function myProfile()
     {
-        return view('user.my-profile');
+        $model = auth()->user();
+        return view('user.my-profile', ['model' => $model]);
     }
 }

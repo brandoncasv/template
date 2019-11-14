@@ -106,6 +106,19 @@ class User extends Authenticatable
             'email'                 => __('attributes.user.email'),
             'password'              => __('attributes.user.password'),
             'password_confirmation' => __('attributes.user.password_confirmation'),
+            'first_name'            => __('attributes.user.first_name'),
+            'last_name'             => __('attributes.user.last_name'),
+            'last_name'             => __('attributes.user.last_name'),
+            'change_image'          => __('attributes.user.change_image'),
+            'delete_image'          => __('attributes.user.delete_image'),
+            'phone'                 => __('attributes.user.phone'),
+            'phone_code'            => __('attributes.user.phone_code'),
+            'description'           => __('attributes.user.description'),
+            'social_login'          => __('attributes.user.social_login'),
+            'language'              => __('attributes.user.language'),
+            'phone_verified_at'     => __('attributes.user.phone_verified_at'),
+            'correo_verified_at'    => __('attributes.user.correo_verified_at'),
+            'last_login'            => __('attributes.user.last_login'),
         ];
     }
 
