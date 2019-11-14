@@ -18,6 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home'            , 'HomeController@index')->name('home');
-Route::get('admin'            , 'Admin\DashboardController@index')->middleware('auth')->name('dashboard');
+Route::get('/admin'           , 'Admin\DashboardController@index')->middleware('auth')->name('dashboard');
 Route::get('/admin/my-profile', 'Admin\UserController@myProfile')->name('my-profile');
 Route::resource('/admin/user' , 'Admin\UserController')->middleware('auth');
