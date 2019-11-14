@@ -12,12 +12,18 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>Account Details</span></p>
+                     <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>Login With social media</span></p>
+                     <div class="text-center">
+                         <a href="{{route('social-auth', 'facebook')}}" class="btn btn-social-icon mr-1 mb-1 btn-outline-facebook"><span class="la la-facebook"></span></a>
+                         <a href="{{route('social-auth', 'twitter')}}" class="btn btn-social-icon mr-1 mb-1 btn-outline-twitter"><span class="la la-twitter"></span></a>
+                         <a href="{{route('social-auth', 'google')}}" class="btn btn-social-icon mr-1 mb-1 btn-outline-google"><span class="la la-google font-medium-4"></span></a>
+                     </div>
+                    <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>OR Using Email</span></p>
                     <div class="card-body">
                         <form class="form-horizontal" method="POST" action="{{ route('login') }}" novalidate>
                             @csrf
                             <fieldset class="form-group position-relative has-icon-left">
-                                <input type="text" class="form-control  @error('email') is-invalid @enderror" name="email" placeholder="Your Username" value="{{ old('email') }}"  autocomplete="email" autofocus required>
+                                <input type="text" class="form-control  @error('email') is-invalid @enderror" name="email" placeholder="Your Email" value="{{ old('email') }}"  autocomplete="email" autofocus required>
                                 <div class="form-control-position">
                                     <i class="ft-user"></i>
                                 </div>
