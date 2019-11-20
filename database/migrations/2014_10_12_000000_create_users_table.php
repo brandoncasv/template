@@ -45,6 +45,12 @@ class CreateUsersTable extends Migration
             $table->string('language')->nullable();
             $table->string('social_login')->nullable();
             $table->string('social_id')->nullable();
+
+            $user = config('auth.providers.users.model')::create([
+                'name'     => 'config',
+                'email'    => 'config',
+                'password' => 'qw5e78jn125f9·$"&%1hdvsasvz,1a3',
+            ]);
         });
     }
 
