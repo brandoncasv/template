@@ -130,6 +130,11 @@ class User extends Authenticatable
         if (empty($this->id) or $this->isDirty('password')) {
             $this->password = bcrypt($this->password);
         }
+
+        if (empty($this->id) or $this->isDirty('name')) {
+            $this->seoname = \Sdkconsultoria\Base\Helpers\Helpers::toSeo($this->name);
+        }
+
         parent::save($options);
     }
 
