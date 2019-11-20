@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\User;
 
 class CreateUsersTable extends Migration
 {
@@ -46,12 +47,14 @@ class CreateUsersTable extends Migration
             $table->string('social_login')->nullable();
             $table->string('social_id')->nullable();
 
-            $user = config('auth.providers.users.model')::create([
-                'name'     => 'config',
-                'email'    => 'config',
-                'password' => 'qw5e78jn125f9·$"&%1hdvsasvz,1a3',
-            ]);
         });
+
+        $user           = new User();
+        $user->name     = 'config';
+        $user->email    = 'config';
+        $user->password = 'qw5e78jn125f9·$"&%1hdvsasvz,1a3';
+        $user->status   = 0;
+        $user->save();
     }
 
     /**
