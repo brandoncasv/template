@@ -12,7 +12,7 @@
     <meta property="og:image" content="@yield('og:image', asset('polo/images/logo.png'))" />
     <meta name="description"  content="@yield('description', '')">
     <meta name="author"       content="@yield('author', config('app.name'))">
-
+    <meta name="keywords"     content="@yield('keywords', '')">
 
     <!-- Document title -->
     <title> @yield('title_tab', config('app.name'))</title>
