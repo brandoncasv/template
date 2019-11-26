@@ -14,17 +14,18 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        Role::create(['name' => 'Super Admin']);
+        Role::create(['name' => 'super-admin']);
         Role::create(['name' => 'admin']);
+        Role::create(['name' => 'client']);
 
         $user = config('auth.providers.users.model')::create([
             'name'     => 'Admin',
             'email'    => 'admin@admin.com',
             'password' => 'password',
-            'status'   => 20,
+            'status'   => 35,
         ]);
 
-        $user->assignRole(['Super Admin', 'admin']);
+        $user->assignRole(['super-admin', 'admin']);
 
     }
 }
