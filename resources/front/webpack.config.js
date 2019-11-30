@@ -5,10 +5,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     mode: "development",
-    entry: path.resolve(__dirname, "backend.js"),
+    entry: path.resolve(__dirname, "entry.js"),
     output: {
         path: path.resolve("public"),
-        filename: "bundle-back.js",
+        filename: "bundle-front.js",
     },
     resolve: {
         modules: [ path.resolve('node_modules')],

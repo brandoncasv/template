@@ -13,3 +13,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 public/bundle-back.js
+public/bundle-front.js

@@ -240,6 +240,7 @@
 <script src="{{asset('./assets/vendors/jquery.min.js')}}"></script>
 <script src="{{asset('./assets/js/theme-vendors.js')}}"></script>
 <script src="{{asset('./assets/js/theme.min.js')}}"></script>
+<script src="{{asset('./bundle-front.js')}}"></script>
 
 </body>
 </html>

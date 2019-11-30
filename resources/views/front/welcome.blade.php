@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('front.layouts.app')
 
 @section('content')
 <section class="vc_row fullheight d-flex flex-wrap align-items-center pb-50">
