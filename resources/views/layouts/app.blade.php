@@ -15,7 +15,7 @@
     <meta property="og:title" content="@yield('title_tab', config('app.name'))" />
     <meta property="og:type"  content="@yield('og:type', 'website')" />
     <meta property="og:url"   content="@yield('og:url', URL::current())" />
-    <meta property="og:image" content="@yield('og:image', asset('polo/images/logo.png'))" />
+    <meta property="og:image" content="@yield('og:image', asset('assets/img/logo/logo-1.svg'))" />
     <meta name="description"  content="@yield('description', '')">
     <meta name="author"       content="@yield('author', config('app.name'))">
     <meta name="keywords"     content="@yield('keywords', '')">
@@ -225,7 +225,7 @@
 							<img src="./assets/img/logo/logo-1.svg" alt="Logo">
 						</figure>
 
-						<p>© 2019 Ave. All Rights Reserved.</p>
+						<p>© {{date('Y')}} Ave. All Rights Reserved.</p>
 
 					</div><!-- /.col-md-6 -->
 
