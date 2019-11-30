@@ -19,3 +19,16 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# ----------------------------------------------------------------------
+# Apache caching
+# ----------------------------------------------------------------------
+# Cache exprires in a week
+<filesMatch ".(ico|png|gif|js|css|woff2|pdf|jpeg|jpg|webp|ttf)$">
+    FileETag MTime Size
+
+    Header set Cache-Control "max-age=604800, public, must-revalidate"
+
+    ExpiresActive On
+    ExpiresDefault A604800
+</filesMatch>
