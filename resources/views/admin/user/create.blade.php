@@ -19,7 +19,7 @@ use Sdkconsultoria\Base\Widgets\Messages\Error;
     <?= Error::generate($errors) ?>
     <form action="{{route('user.store')}}" method="post" novalidate>
         @csrf
-        @include('user._form')
+        @include('admin.user._form')
     </form>
     @endcard()
 @endsection

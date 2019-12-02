@@ -8,7 +8,7 @@ use Sdkconsultoria\Base\Controllers\ResourceController;
 class UserController extends ResourceController
 {
     protected $model    = '\App\User';
-    protected $view     = 'user';
+    protected $view     = 'admin.user';
     protected $resource = 'user';
     protected $key      = 'name';
 

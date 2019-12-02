@@ -22,7 +22,7 @@ ActiveField::$rules = 'rulesUpdate';
         <form action="{{route('user.update', $model->name)}}" method="post">
             @csrf
             @method('PUT')
-            @include('user._form')
+            @include('admin.user._form')
         </form>
     @endcard()
 @endsection
