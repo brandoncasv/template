@@ -14,8 +14,7 @@ module.exports = {
         modules: [ path.resolve('node_modules')],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            Base: path.resolve('public/base'),
-            // Base: path.resolve(__dirname, 'public/base'),
+            Base: path.resolve('resources/base/'),
         },
         extensions: [".js", ".json", ".jsx", ".css"],
     },
