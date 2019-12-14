@@ -27,7 +27,11 @@ services:
       - MYSQL_PASSWORD=secret
     networks:
       - servers
+    volumes:
+        - mysql:/var/lib/mysql
 
 networks:
   servers:
     external: true
+volumes:
+  mysql:
