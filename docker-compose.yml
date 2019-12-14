@@ -28,10 +28,10 @@ services:
     networks:
       - servers
     volumes:
-        - mysql:/var/lib/mysql
+        - db-mysql:/var/lib/mysql
 
 networks:
   servers:
     external: true
 volumes:
-  mysql:
+  db-mysql:
