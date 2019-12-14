@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 
 services:
 
@@ -13,8 +13,11 @@ services:
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app
+      - /home/hellsythe/projects/templates:/templates
+      - /home/hellsythe/projects/sdk:/sdk
     ports:
-        - 8888:80
+        - 80:80
+
   mysql:
     image: mysql:5.7
     environment:
