@@ -74,6 +74,6 @@ module.exports = {
             jQuery: 'jquery'
         }),
         new VueLoaderPlugin(),
-        mode: isDevelopment ? 'development' : 'production'
-    ],
+    ].filter(Boolean),
+    mode: isDevelopment ? 'development' : 'production'
 }

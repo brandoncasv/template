@@ -2,9 +2,9 @@
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build:back": "cross-env NODE_ENV=production webpack --progress --hide-modules  --config resources/webpack.config.js",
-        "watch:back": "webpack --watch --config resources/webpack.config.js",
-        "build:front": "cross-env NODE_ENV=production webpack --progress --hide-modules  --config resources/front/webpack.config.js",
+        "build:back": "cross-env NODE_ENV=production webpack --progress --hide-modules --config resources/admin/webpack.config.js",
+        "watch:back": "webpack --watch --config resources/admin/webpack.config.js",
+        "build:front": "cross-env NODE_ENV=production webpack --progress --hide-modules --config resources/front/webpack.config.js",
         "watch:front": "webpack --watch --config resources/front/webpack.config.js"
     },
     "devDependencies": {
