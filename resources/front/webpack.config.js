@@ -2,6 +2,7 @@ const path = require('path');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
 module.exports = {
     mode: "development",
@@ -9,6 +10,8 @@ module.exports = {
     output: {
         path: path.resolve("public"),
         filename: "bundle-front.js",
+        // library: 'bundler',
+        // libraryTarget: 'umd',
     },
     resolve: {
         modules: [ path.resolve('node_modules')],
@@ -65,11 +68,12 @@ module.exports = {
         ]
     },
     plugins: [
-        // new MinifyPlugin({}, {}),
+        // !isDevelopment ? new MinifyPlugin({}, {}) : false,
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        mode: isDevelopment ? 'development' : 'production'
     ],
 }
