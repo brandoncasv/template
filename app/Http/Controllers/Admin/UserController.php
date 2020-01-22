@@ -2,7 +2,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use Sdkconsultoria\Base\Controllers\ResourceController;
 
 class UserController extends ResourceController
