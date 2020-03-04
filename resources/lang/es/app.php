@@ -7,5 +7,6 @@ return [
         'privacy'      => 'Acuerdo de privacidad',
         'terms'        => 'Términos y condiciones',
         'faq'          => 'Preguntas frecuentes',
+        'news'         => 'Noticias',
     ],
 ];
