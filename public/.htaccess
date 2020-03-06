@@ -33,6 +33,14 @@
     ExpiresDefault A604800
 </filesMatch>
 
+<filesMatch ".(json)$">
+    FileETag MTime Size
+
+    Header set Cache-Control "no-store"
+
+    ExpiresActive On
+    ExpiresDefault A604800
+</filesMatch>
 # ----------------------------------------------------------------------
 # Apache Gzip
 # ----------------------------------------------------------------------
@@ -62,3 +70,6 @@ ExpiresByType application/javascript "access plus 216000 seconds"
 ExpiresByType application/x-javascript "access plus 216000 seconds"
 ExpiresByType text/html "access plus 600 seconds"
 ExpiresByType application/xhtml+xml "access plus 600 seconds"
+
+ExpiresByType application/x-web-app-manifest+json "access plus 0 seconds"
+ExpiresByType application/json                    "access plus 0 seconds"
