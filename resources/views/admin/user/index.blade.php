@@ -23,7 +23,7 @@ use Sdkconsultoria\Base\Widgets\Messages\Alert;
         'model' => $model,
         'models' => $models,
         'route' => 'user',
-        'key' => 'name',
+        'key' => 'seoname',
         'attributes' => [
             'name',
             'email',

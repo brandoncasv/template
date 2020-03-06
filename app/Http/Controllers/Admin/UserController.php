@@ -9,7 +9,7 @@ class UserController extends ResourceController
     protected $model    = '\App\User';
     protected $view     = 'admin.user';
     protected $resource = 'user';
-    protected $key      = 'name';
+    protected $key      = 'seoname';
 
     /**
      * Store a newly created resource in storage.
