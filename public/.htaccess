@@ -24,7 +24,7 @@
 # Apache caching
 # ----------------------------------------------------------------------
 # Cache exprires in a week
-<filesMatch ".(ico|png|gif|js|css|woff2|pdf|jpeg|jpg|webp|ttf)$">
+<filesMatch ".(ico|png|gif|js|css|woff2|pdf|jpeg|jpg|webp|ttf|svg)$">
     FileETag MTime Size
 
     Header set Cache-Control "max-age=604800, public, must-revalidate"
@@ -44,7 +44,7 @@
 # ----------------------------------------------------------------------
 # Apache Gzip
 # ----------------------------------------------------------------------
-AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript image/svg+xml
 
 # ----------------------------------------------------------------------
 # Apache Expire headers
