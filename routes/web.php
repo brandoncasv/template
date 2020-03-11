@@ -20,7 +20,18 @@
 
 Auth::routes();
 
-Route::get('/'                , 'HomeController@index')->name('home');
-Route::get('/admin'           , 'Admin\DashboardController@index')->middleware('auth')->name('dashboard');
-Route::get('/admin/my-profile', 'Admin\UserController@myProfile')->name('my-profile');
-Route::resource('/admin/user' , 'Admin\UserController')->middleware('auth');
+// Front routes
+Route::namespace('Front')
+->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
+// Admin routes
+Route::prefix('admin')
+->middleware(['web', 'role:super-admin'])
+->namespace('Admin')
+->group(function () {
+    Route::get('/'          , 'DashboardController@index')->middleware('auth')->name('dashboard');
+    Route::get('/my-profile', 'UserController@myProfile')->name('my-profile');
+    Route::resource('/user' , 'UserController')->middleware('auth');
+});
