@@ -11,16 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('front.welcome');
-});
-Route::get('/test', function () {
-    return view('test');
-});
+// Route::get('/', function () {
+//     return view('front.welcome');
+// });
+// Route::get('/test', function () {
+//     return view('test');
+// });
 
 Auth::routes();
 
-Route::get('/home'            , 'HomeController@index')->name('home');
+Route::get('/'                , 'HomeController@index')->name('home');
 Route::get('/admin'           , 'Admin\DashboardController@index')->middleware('auth')->name('dashboard');
 Route::get('/admin/my-profile', 'Admin\UserController@myProfile')->name('my-profile');
 Route::resource('/admin/user' , 'Admin\UserController')->middleware('auth');
