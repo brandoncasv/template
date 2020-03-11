@@ -3,32 +3,11 @@ namespace Deployer;
 
 require 'recipe/laravel.php';
 
-//Global config
-set('http_user', 'www-data');
-
 // set default stage
 set('default_stage', 'production');
 
-// set permisions
-set('writable_use_sudo', true);
-set('clear_use_sudo', true);
-set('cleanup_use_sudo', true);
-
 // Project name
 set('application', 'sdk_template');
-
-// Project repository
-set('repository', 'git@github.com:sdkconsultoria/template.git');
-
-// [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true);
-
-// Shared files/dirs between deploys
-add('shared_files', []);
-add('shared_dirs', []);
-
-// Writable dirs by web server
-add('writable_dirs', []);
 
 // Hosts
 host('sdkconsultoria.com')
@@ -42,6 +21,27 @@ host('trial.sdkconsultoria.com')
     // ->set('user', 'www-data')
     ->port(22)
     ->set('deploy_path', '/var/www/html/{{application}}');
+
+//Global config
+set('http_user', 'www-data');
+
+// set permisions
+set('writable_use_sudo', true);
+set('clear_use_sudo', true);
+set('cleanup_use_sudo', true);
+
+// Project repository
+set('repository', 'git@github.com:sdkconsultoria/template.git');
+
+// [Optional] Allocate tty for git clone. Default value is false.
+set('git_tty', true);
+
+// Shared files/dirs between deploys
+add('shared_files', []);
+add('shared_dirs', []);
+
+// Writable dirs by web server
+add('writable_dirs', []);
 
 // Tasks
 
@@ -72,6 +72,12 @@ task('fix', [
 task('build', function () {
     run('cd {{release_path}} && build');
 });
+
+//Group Fix
+task('sdk-deploy', [
+    'deploy',
+    'fix',
+]);
 
 //back to previus release
 // task('npm', function () {
