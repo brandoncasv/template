@@ -16,8 +16,6 @@
         "sdkconsultoria/blog": "*"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.2",
-        "deployer/deployer": "^6.7",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.1",
