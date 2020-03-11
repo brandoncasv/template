@@ -28,10 +28,13 @@ Route::namespace('Front')
 
 // Admin routes
 Route::prefix('admin')
-->middleware(['web', 'role:super-admin'])
+->middleware(['web'])
 ->namespace('Admin')
 ->group(function () {
     Route::get('/'          , 'DashboardController@index')->middleware('auth')->name('dashboard');
     Route::get('/my-profile', 'UserController@myProfile')->name('my-profile');
-    Route::resource('/user' , 'UserController')->middleware('auth');
+
+    Route::middleware(['role:super-admin'])->group(function () {
+        Route::resource('/user' , 'UserController')->middleware('auth');
+    });
 });
