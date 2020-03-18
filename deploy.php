@@ -16,5 +16,6 @@ set('repository', 'git@github.com:sdkconsultoria/template.git');
 host('sdkconsultoria.com')
     ->stage('production')
     // ->set('user', 'www-data')
+    // ->user('USER')
     ->port(22)
     ->set('deploy_path', '/var/www/html/{{application}}');
