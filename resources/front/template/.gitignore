@@ -1,2 +1,4 @@
 *
 !.gitignore
+!entry.js
+!entry.scss
