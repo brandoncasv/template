@@ -27,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'first_name', 'last_name', 'social_login', 'social_id'
+        'name', 'email', 'password', 'firstname', 'lastname1', 'lastname2', 'social_login', 'social_id'
     ];
 
     /**
@@ -59,10 +59,12 @@ class User extends Authenticatable
             'name'      => 'required|string|max:255',
             'email'     => 'required|string|email|unique:users,email|max:255',
             'password'  => 'required|string|min:6|confirmed',
+            // 'firstname' => 'required|string|max:255',
+            // 'lastname1' => 'required|string|max:255',
         ];
     }
 
-/**
+    /**
      * Get the validation rules that apply to the request in update.
      *
      * @return array
@@ -74,6 +76,22 @@ class User extends Authenticatable
         unset($validate['password']);
         $validate['password'] = 'nullable|string|min:6|confirmed';
         $validate['email'] = ['required', 'string', 'email', Rule::unique('users', 'email')->ignore($params['user_id']??'0'), 'max:255'];
+        return $validate;
+    }
+
+    /**
+     * Get the validation rules that apply to the request in update.
+     *
+     * @return array
+     */
+    public static function rulesProfile($params)
+    {
+        $validate = Self::rules($params);
+        unset($validate['name']);
+        unset($validate['email']);
+        unset($validate['password']);
+
+        $validate['password'] = 'nullable|string|min:6|confirmed';
         return $validate;
     }
 

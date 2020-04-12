@@ -44,9 +44,17 @@ class UserController extends ResourceController
         return redirect()->route($this->resource . '.index')->with('success', __('base::messages.saved'));
     }
 
-    public function myProfile()
+    public function myProfile(Request $request)
     {
         $model = auth()->user();
-        return view('user.my-profile', ['model' => $model]);
+
+        if ($request->isMethod('post')) {
+            $this->validate($request, 'rulesProfile', ['user_id' => $model->id]);
+            $this->loadData($model, $request);
+            $model->save();
+            return redirect()->route('my-profile')->with('success', __('base::messages.saved'));
+        }
+
+        return view('admin.user.my-profile', ['model' => $model]);
     }
 }
