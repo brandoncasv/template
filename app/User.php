@@ -178,9 +178,9 @@ class User extends Authenticatable
     public function getProfile()
     {
         if ($this->avatar) {
-            return asset('images/profile.png');
+            return asset('storage/users/' . $this->id.'/'.$this->id.'_profile.'.$this->avatar);
         }
-        return asset('storage/users/' . $this->id.'/'.$this->id.'_profile.'.$this->avatar);
+        return asset('images/profile.png');
     }
 
     public function getProfilePhoto($size = 'medium', $htmlOptions = [], $options = [])
