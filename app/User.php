@@ -9,6 +9,7 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Hash;
 use Sdkconsultoria\Base\Traits\TraitModel;
 use Illuminate\Validation\Rule;
+use Sdkconsultoria\Base\Helpers\{Images};
 
 class User extends Authenticatable
 {
@@ -172,5 +173,27 @@ class User extends Authenticatable
     public function updatedBy()
     {
         return $this->hasOne('App\User', 'id', 'updated_by');
+    }
+
+    public function getProfile()
+    {
+        if ($this->avatar) {
+            return asset('images/profile.png');
+        }
+        return asset('storage/users/' . $this->id.'/'.$this->id.'_profile.'.$this->avatar);
+    }
+
+    public function getProfilePhoto($size = 'medium', $htmlOptions = [], $options = [])
+    {
+        return Html::image(
+            'storage/users/'.$this->id.'/'.$this->id.'-'.$size.'.jpg',
+            array_merge($htmlOptions, ['alt' => '']),
+            $options
+        );
+    }
+
+    public function convertImage()
+    {
+        Images::convertImage('users/'.$this->id.'/', $this->id . '_profile', $this->avatar);
     }
 }

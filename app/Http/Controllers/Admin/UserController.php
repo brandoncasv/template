@@ -52,9 +52,25 @@ class UserController extends ResourceController
             $this->validate($request, 'rulesProfile', ['user_id' => $model->id]);
             $this->loadData($model, $request);
             $model->save();
+
+            $this->saveImage($model, $request);
             return redirect()->route('my-profile')->with('success', __('base::messages.saved'));
         }
 
         return view('admin.user.my-profile', ['model' => $model]);
+    }
+
+    private function saveImage($model, $request)
+    {
+        if($request->hasfile('my_profile_photo'))
+        {
+            $file = $request->file('my_profile_photo');
+            $extension = $file->getClientOriginalExtension();
+            $filename  = $file->getClientOriginalName();
+            $file->storeAs('users/' . $model->id, $model->id . '_profile.' . $file->extension(), 'public');
+            $model->avatar = $file->extension();
+            $model->save();
+            $model->convertImage();
+        }
     }
 }

@@ -33,11 +33,16 @@ use Sdkconsultoria\Base\Widgets\Messages\Error;
         </div>
         <div class="col-md-4">
             <div class="text-center">
-                <img class="img-fluid rounded-circle width-300" src="{{asset('images/profile.png')}}" alt="">
+                <img class="img-fluid rounded-circle width-300" src="{{$model->getProfile()}}" alt="">
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-outline-info btn-block"><i class="ft-upload"></i> {{ __('attributes.user.change_image') }}</button>
-                <button type="button" class="btn btn-outline-danger btn-block"><i class="ft-trash-2"></i> {{ __('attributes.user.delete_image') }}</button>
+                <form action="{{route('my-profile')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input class="form-control" type="file" name="my_profile_photo">
+                    <br>
+                    <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-upload"></i> {{ __('attributes.user.change_image') }}</button>
+                    <button type="button" class="btn btn-outline-danger btn-block"><i class="ft-trash-2"></i> {{ __('attributes.user.delete_image') }}</button>
+                </form>
             </div>
             <form action="{{route('my-profile')}}" method="post" novalidate>
                 @csrf
