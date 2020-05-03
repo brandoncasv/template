@@ -157,28 +157,10 @@ class User extends Authenticatable
         parent::save($options);
     }
 
-    /**
-     * Devuelve el usuario que creo el elemento
-     * @return [type] [description]
-     */
-    public function createdBy()
-    {
-        return $this->hasOne('App\User', 'id', 'created_by');
-    }
-
-    /**
-     * Devuelve el ultimo usuario que modifico este elemento
-     * @return [type] [description]
-     */
-    public function updatedBy()
-    {
-        return $this->hasOne('App\User', 'id', 'updated_by');
-    }
-
-    public function getProfile()
+    public function getProfile($size = 'medium')
     {
         if ($this->avatar) {
-            return asset('storage/users/' . $this->id.'/'.$this->id.'_profile.'.$this->avatar);
+            return asset('storage/users/' . $this->id . '/' . $this->id .'_profile'. '-' . $size .'.jpg');
         }
         return asset('images/profile.png');
     }
