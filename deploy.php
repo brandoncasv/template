@@ -13,7 +13,7 @@ set('application', 'sdk_template');
 set('repository', 'git@github.com:sdkconsultoria/template.git');
 
 // Hosts
-host('sdkconsultoria.com')
+host('vps1.sdkconsultoria.com')
     ->stage('production')
     // ->set('user', 'www-data')
     // ->user('USER')

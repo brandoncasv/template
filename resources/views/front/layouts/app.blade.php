@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#3ed2a7">
 
-    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 
     <title> @yield('title_tab', config('app.name'))</title>
 
