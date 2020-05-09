@@ -3,6 +3,7 @@ const MinifyPlugin = require("babel-minify-webpack-plugin");
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: "development",
@@ -68,6 +69,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new Dotenv(),
         // !isDevelopment ? new MinifyPlugin({}, {}) : false,
         new webpack.ProvidePlugin({
             $: 'jquery',
