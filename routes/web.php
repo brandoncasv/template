@@ -28,7 +28,7 @@ Route::namespace('Front')
 
 // Admin routes
 Route::prefix('admin')
-->middleware(['web', 'auth'])
+->middleware(['web', 'auth', 'admin'])
 ->namespace('Admin')
 ->group(function () {
     Route::get('/'          , 'DashboardController@index')->name('dashboard');
