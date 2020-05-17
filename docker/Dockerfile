@@ -27,22 +27,11 @@ RUN add-apt-repository ppa:ondrej/php && \
        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Enable apache mods
-RUN a2enmod rewrite headers expires php7.4 && \
-    a2dismod php7.3
-
-# RUN a2enmod proxy_fcgi && \
-#     a2enconf php7.4-fpm
+RUN a2enmod rewrite headers expires php7.4
 
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     composer clear-cache
-
-# Install NodeJS
-RUN apt -y install dirmngr apt-transport-https lsb-release ca-certificates
-
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-
-RUN apt -y install nodejs
 
 COPY image-files/ /
 
