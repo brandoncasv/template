@@ -34,6 +34,13 @@ RUN curl -sS https://getcomposer.org/installer -o composer-setup.php && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     composer clear-cache
 
+# Install NodeJS
+RUN apt -y install dirmngr apt-transport-https lsb-release ca-certificates
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+RUN apt -y install nodejs
+
 COPY image-files/ /
 
 WORKDIR /app
