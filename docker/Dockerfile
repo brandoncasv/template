@@ -10,6 +10,7 @@ RUN  apt-get update && \
 RUN add-apt-repository ppa:ondrej/php && \
     apt-get update && \
     apt-get -y install \
+            zip \
             curl \
             apache2 \
             php7.4 \
