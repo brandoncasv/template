@@ -12,6 +12,8 @@ set('application', 'sdk_template');
 // Project repository
 set('repository', 'git@github.com:sdkconsultoria/template.git');
 
+// add('shared_dirs', ['public/app-assets']);
+
 // Hosts
 host('vps1.sdkconsultoria.com')
     ->stage('production')
