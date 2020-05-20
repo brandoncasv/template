@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
 
         $user = config('auth.providers.users.model')::create([
             'name'     => 'Admin',
-            'email'    => 'admin@admin.com',
+            'email'    => 'admin@sdkconsultoria.com',
             'password' => 'password',
             'status'   => 35,
         ]);
