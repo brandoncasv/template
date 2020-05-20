@@ -6,6 +6,9 @@ RUN  apt-get update && \
      apt-get -y install \
              software-properties-common
 
+RUN apt-get install rsync grsync
+RUN apt-get install ssh
+
 # Install Apache and PHP
 RUN add-apt-repository ppa:ondrej/php && \
     apt-get update && \
