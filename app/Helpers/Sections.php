@@ -10,9 +10,9 @@ class Sections
     {
         return [
             [
-                'name' => __('app.pages.about'),
+                'name' => __('app.sections.testimony'),
                 'icon' => 'file-text',
-                'url'  => ['blog-post.page', 'about'],
+                'url'  => ['blog-post.blogs', 'testimonies'],
             ],
         ];
     }

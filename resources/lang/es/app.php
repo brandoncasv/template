@@ -9,4 +9,8 @@ return [
         'faq'          => 'Preguntas frecuentes',
         'news'         => 'Noticias',
     ],
+    'sections' => [
+        'testimony' => 'Testimonio',
+        'testimonies' => 'Testimonios',
+    ]
 ];
