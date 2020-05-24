@@ -6,10 +6,10 @@ RUN  apt-get update && \
      apt-get -y install \
              software-properties-common
 
-RUN apt-get install rsync grsync
-RUN apt-get install ssh
-RUN apt-get install webp
-RUN apt-get install mysql-client
+RUN apt-get install rsync grsync  -y
+RUN apt-get install ssh  -y
+RUN apt-get install webp  -y
+RUN apt-get install mysql-client  -y
 
 # Install Apache and PHP
 RUN add-apt-repository ppa:ondrej/php && \
