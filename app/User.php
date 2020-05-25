@@ -178,4 +178,9 @@ class User extends Authenticatable
     {
         Images::convertImage('users/'.$this->id.'/', $this->id . '_profile', $this->avatar);
     }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->firstname} {$this->lastname1}  {$this->lastname2}";
+    }
 }
