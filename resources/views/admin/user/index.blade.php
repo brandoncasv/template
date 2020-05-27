@@ -26,9 +26,21 @@ use Sdkconsultoria\Base\Widgets\Messages\Alert;
         'key' => 'seoname',
         'attributes' => [
             'name',
+            'full_name',
             'email',
             'created_at',
             'status',
+            [
+                'label' => 'Roles',
+                'value' => function($model){
+                    $roles = '';
+                    foreach ($model->roles as $key => $role) {
+                        $roles .= $role->name .', ';
+                    }
+                    $roles = substr($roles, 0, -2);
+                    return $roles;
+                }
+            ]
         ]
     ])?>
     @endcard
