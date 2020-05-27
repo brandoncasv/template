@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'name'     => 'Admin',
             'email'    => 'admin@sdkconsultoria.com',
             'password' => 'password',
-            'status'   => 35,
+            'status'   => 20,
         ]);
 
         $user->assignRole(['super-admin', 'admin']);
