@@ -73,4 +73,60 @@ class UserController extends ResourceController
             $model->convertImage();
         }
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $model = new $this->model();
+
+        if (!$request->input('status')) {
+            $models = $this->model::where($model->getTable().'.status', '!=', $this->model::STATUS_DELETE)
+            ->where($model->getTable().'.status', '!=',$this->model::STATUS_CREATE);
+        }else{
+            $models = $this->model::where($model->getTable().'.id', '>', '0');
+        }
+
+        $models = $models->where($model->getTable().'.status', '!=' ,'0')->with('roles');
+
+        $models   = Self::getOrder($models, $request->get('order'));
+        if ($request->input('pagination')) {
+            $this->filters['pagination'] = $request->input('pagination');
+        }
+        $models   = Self::setFilter($models, $request);
+        $models   = $models->paginate($this->filters['pagination'])->appends($this->filters);
+
+        return view($this->view . '.index', compact('models', 'model'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function clients(Request $request)
+    {
+        $model = new $this->model();
+
+        if (!$request->input('status')) {
+            $models = $this->model::where($model->getTable().'.status', '!=', $this->model::STATUS_DELETE)
+            ->where($model->getTable().'.status', '!=',$this->model::STATUS_CREATE);
+        }else{
+            $models = $this->model::where($model->getTable().'.id', '>', '0');
+        }
+
+        $models = $models->where($model->getTable().'.status', '!=' ,'0')->with('roles');
+
+        $models   = Self::getOrder($models, $request->get('order'));
+        if ($request->input('pagination')) {
+            $this->filters['pagination'] = $request->input('pagination');
+        }
+        $models   = Self::setFilter($models, $request);
+        $models   = $models->paginate($this->filters['pagination'])->appends($this->filters);
+
+        return view($this->view . '.index', compact('models', 'model'));
+    }
 }
