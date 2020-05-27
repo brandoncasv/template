@@ -66,7 +66,7 @@
                                 @endif
                             </div>
                             <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{__('base::app.login.login')}}</button>
-                            <a href="{{route('login')}}" class="btn btn-outline-danger btn-block"><i class="ft-unlock"></i> {{__('base::app.login.register')}}</a>
+                            <a href="{{route('register')}}" class="btn btn-outline-danger btn-block"><i class="ft-unlock"></i> {{__('base::app.login.register')}}</a>
                         </form>
                     </div>
                 </div>
