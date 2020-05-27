@@ -39,5 +39,6 @@ Route::prefix('admin')
 
     Route::middleware(['role:super-admin'])->group(function () {
         Route::resource('/user' , 'UserController');
+        Route::get('/clients', 'UserController@clients')->name('clients');
     });
 });
