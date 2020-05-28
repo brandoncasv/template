@@ -73,7 +73,8 @@ module.exports = {
         // !isDevelopment ? new MinifyPlugin({}, {}) : false,
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
         }),
         new VueLoaderPlugin(),
     ].filter(Boolean),

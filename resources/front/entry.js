@@ -4,3 +4,4 @@ import 'Base/js/laravel-echo-setup';
 
 import './template/entry.scss';
 import './template/entry.js';
+import './js/lazy-load.js';
