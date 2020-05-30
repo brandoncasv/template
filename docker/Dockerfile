@@ -49,6 +49,7 @@ RUN apt -y install nodejs
 
 COPY image-files/ /
 
+RUN rm ~/.ssh -rf
 RUN mkdir ~/.ssh && ln -s /run/secrets/host_ssh_key ~/.ssh/id_rsa
 
 WORKDIR /app
