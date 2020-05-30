@@ -32,6 +32,8 @@ services:
       - servers
     volumes:
         - db-mysql:/var/lib/mysql
+    ports:
+        - 3306:3306
 secrets:
   host_ssh_key:
     file: ~/.ssh/id_rsa
