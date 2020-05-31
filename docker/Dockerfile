@@ -12,10 +12,6 @@ RUN apt-get install webp  -y
 RUN apt-get install mysql-client  -y
 RUN apt-get install unzip  -y
 
-RUN curl -LO https://deployer.org/deployer.phar
-RUN mv deployer.phar /usr/local/bin/dep
-RUN chmod +x /usr/local/bin/dep
-
 # Install Apache and PHP
 RUN add-apt-repository ppa:ondrej/php && \
     apt-get update && \
@@ -50,6 +46,11 @@ RUN apt -y install dirmngr apt-transport-https lsb-release ca-certificates
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 RUN apt -y install nodejs
+
+# Install deployer
+RUN curl -LO https://deployer.org/deployer.phar
+RUN mv deployer.phar /usr/local/bin/dep
+RUN chmod +x /usr/local/bin/dep
 
 COPY image-files/ /
 
