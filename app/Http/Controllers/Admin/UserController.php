@@ -25,6 +25,8 @@ class UserController extends ResourceController
         $this->loadData($model, $request);
         $model->created_by = \Auth::user()->id;
         $model->save();
+
+        $model->assignRole([$request->input('role')]);
         return redirect()->route($this->resource . '.index')->with('success', __('base::messages.saved'));
     }
 

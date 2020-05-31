@@ -26,6 +26,7 @@
             'correo_verified_at'    => 'Correo verificado en',
             'last_login'            => 'Ultimo ingreso',
             'my-profile'            => 'Mi Perfil',
+            'role'                  => 'Rol',
         ],
         'service' => [
             'extra_a' => 'Extra a',

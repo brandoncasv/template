@@ -28,7 +28,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'firstname', 'lastname1', 'lastname2', 'social_login', 'social_id'
+        'name', 'email', 'password', 'firstname', 'lastname1', 'lastname2', 'social_login', 'social_id', 'status'
     ];
 
     /**
@@ -57,7 +57,9 @@ class User extends Authenticatable
     public static function rules($params)
     {
         return [
-            'name'      => 'required|string|max:255',
+            // 'name'      => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname1' => 'required|string|max:255',
             'email'     => 'required|string|email|unique:users,email|max:255',
             'password'  => 'required|string|min:6|confirmed',
             // 'firstname' => 'required|string|max:255',
@@ -138,6 +140,7 @@ class User extends Authenticatable
             'phone_verified_at'     => __('attributes.user.phone_verified_at'),
             'correo_verified_at'    => __('attributes.user.correo_verified_at'),
             'last_login'            => __('attributes.user.last_login'),
+            'role'                  => __('attributes.user.role'),
         ];
     }
 
@@ -146,6 +149,9 @@ class User extends Authenticatable
      */
     public function save(array $options = [])
     {
+        if (empty($this->name)) {
+            $this->name = \Sdkconsultoria\Base\Helpers\Helpers::toSeo($this->full_name);
+        }
         if (empty($this->id) or $this->isDirty('password')) {
             $this->password = bcrypt($this->password);
         }
@@ -182,5 +188,26 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return "{$this->firstname} {$this->lastname1}  {$this->lastname2}";
+    }
+
+    public function getFirstRoleAttribute()
+    {
+        $roles = $this->roles;
+        if ($roles) {
+            foreach ($roles as $key => $rol) {
+                return $rol->name;
+            }
+        }
+    }
+
+    public function getFirstRoleIdAttribute()
+    {
+        $roles = $this->roles;
+        if ($roles) {
+            foreach ($roles as $key => $rol) {
+                return $rol->id;
+            }
+        }
+        return false;
     }
 }
