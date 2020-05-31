@@ -22,6 +22,6 @@
 </head>
 <body>
     @yield('content')
-<script src="{{asset('./bundle-front.js')}}"></script>
+    <script src="{{asset('bundle-front.*.js', null, false, 'bundle')}}"></script>
 </body>
 </html>

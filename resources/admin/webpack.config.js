@@ -10,7 +10,8 @@ module.exports = {
     entry: path.resolve(__dirname, "entry.js"),
     output: {
         path: path.resolve("public"),
-        filename: "bundle-back.js",
+        // filename: "bundle-back.js",
+        filename: isDevelopment?'bundle-back.js':'bundle-back.[contenthash].js',
         // library: 'bundler',
         // libraryTarget: 'umd',
     },

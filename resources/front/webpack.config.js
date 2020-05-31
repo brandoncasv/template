@@ -10,7 +10,8 @@ module.exports = {
     entry: path.resolve(__dirname, "entry.js"),
     output: {
         path: path.resolve("public"),
-        filename: "bundle-front.js",
+        // filename: "bundle-front.js",
+        filename: isDevelopment?'bundle-front.js':'bundle-front.[contenthash].js',
         // library: 'bundler',
         // libraryTarget: 'umd',
     },
