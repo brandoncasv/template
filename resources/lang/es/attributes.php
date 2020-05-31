@@ -27,6 +27,7 @@
             'last_login'            => 'Ultimo ingreso',
             'my-profile'            => 'Mi Perfil',
             'role'                  => 'Rol',
+            'full_name'             => 'Nombre completo',
         ],
         'service' => [
             'extra_a' => 'Extra a',

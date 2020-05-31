@@ -141,6 +141,8 @@ class User extends Authenticatable
             'correo_verified_at'    => __('attributes.user.correo_verified_at'),
             'last_login'            => __('attributes.user.last_login'),
             'role'                  => __('attributes.user.role'),
+            'full_name'             => __('attributes.user.full_name'),
+            'id'                    => __('base::attributes.common.id'),
         ];
     }
 

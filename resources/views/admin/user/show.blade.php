@@ -18,7 +18,10 @@ use Sdkconsultoria\Base\Widgets\Information\BreadCrumb;
         <?= Details::generate($model, [
             'id',
             'name',
-            'fullname',
+            [
+                'label' => $model->getLabel('full_name'),
+                'value' => $model->full_name,
+            ],
             'phone',
             'email',
             'created_at',
