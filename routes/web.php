@@ -32,11 +32,7 @@ Route::prefix('admin')
 ->namespace('Admin')
 ->group(function () {
     Route::get('/'          , 'DashboardController@index')->name('dashboard');
-
-    // Route::get('page/{page}', 'BlogPostController@page')->name('blog-post.page');
-    // Route::put('page/{page}', 'BlogPostController@page')->name('blog-post.page');
     Route::match(['get', 'post'], '/my-profile', 'UserController@myProfile')->name('my-profile');
-
     Route::middleware(['role:super-admin'])->group(function () {
         Route::resource('/user' , 'UserController');
         Route::get('/clients', 'UserController@clients')->name('clients');
