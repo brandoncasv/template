@@ -37,18 +37,18 @@ class PagesTableSeeder extends Seeder
         ]
       ];
 
-      foreach ($posts as $key => $value) {
+      foreach ($posts as $key => $post) {
         $model             = new BlogPost;
         $model->status     = BlogPost::STATUS_ACTIVE;
-        $model->identifier = $value['identifier'];
+        $model->identifier = $post['identifier'];
         $model->created_by = 1;
         $model->blog_id   = 2;
         $model->images_types = $model->blog->images_types;
         $model->sizes = $model->blog->sizes;
-        $model->title = $value['title'];
-        $model->subtitle = $value['subtitle'];
-        $model->description = $value['description'];
-        $model->short_description = $value['short_description'];
+        $model->title = $post['title'];
+        $model->subtitle = $post['subtitle'];
+        $model->description = $post['description'];
+        $model->short_description = $post['short_description'];
         $model->save();
       }
     }
