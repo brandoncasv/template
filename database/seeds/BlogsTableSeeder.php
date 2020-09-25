@@ -13,7 +13,7 @@ class BlogsTableSeeder extends Seeder
      */
     public function run()
     {
-      $posts = [
+      $blogs = [
         [
           'title' => '',
           'description' => '',
