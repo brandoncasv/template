@@ -11,6 +11,5 @@ return [
     ],
     'sections' => [
         'testimony' => 'Testimonio',
-        'testimonies' => 'Testimonios',
     ]
 ];
